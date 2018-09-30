@@ -1,0 +1,7 @@
+Simple cipher on C#, that provide encription and decription in defferent algorithms
+
+Currently cipher provide realization of:
+  -Caesar algorithme.
+
+Next future: 
+  -Trithemius algorithme.
