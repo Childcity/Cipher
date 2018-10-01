@@ -33,8 +33,8 @@ namespace Cipher {
 						key = ((LinKey)operationArgs).A * posLetterInMsg + ((LinKey)operationArgs).B;
 						break;
 					case Key.KeyType.NonLinearAquestion:
-						key = ((NonLinKey)operationArgs).A * posLetterInMsg * posLetterInMsg
-							+ ((NonLinKey)operationArgs).B * posLetterInMsg + ((NonLinKey)operationArgs).C;
+						key = ((NonLinKey)operationArgs).A 
+							* posLetterInMsg * + ((NonLinKey)operationArgs).B * posLetterInMsg + ((NonLinKey)operationArgs).C;
 						break;
 					case Key.KeyType.Gaslo:
 						key = dict[((Gaslo)operationArgs).gaslo[posLetterInMsg]];
@@ -46,7 +46,7 @@ namespace Cipher {
 				if ( op == Operation.Encrypt ) {
 					num = (dict[letter] + key) % dict.Count;
 				} else {
-					num = ( ( dict[letter] + dict.Count - ( key % dict.Count ) ) % dict.Count );
+					num = ( dict[letter] + dict.Count - ( key % dict.Count ) ) % dict.Count;
 				}
 				// Finding in dict letter num
 				result += dict.FirstOrDefault(x => x.Value == num).Key;
