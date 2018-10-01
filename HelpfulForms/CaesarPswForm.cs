@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Cezar.HelpfulForms {
+namespace Cipher.HelpfulForms {
 	public partial class CaesarPswForm : Form {
 		public string key { get; set; }
 		public CaesarPswForm() {
@@ -35,6 +29,10 @@ namespace Cezar.HelpfulForms {
 		}
 
 		private void button1_Click(object sender, EventArgs e) {
+
+		}
+
+		private void CaesarPswForm_Load(object sender, EventArgs e) {
 
 		}
 	}

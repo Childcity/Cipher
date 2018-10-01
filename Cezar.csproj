@@ -64,14 +64,27 @@
     <Compile Include="HelpfulForms\CaesarPswForm.Designer.cs">
       <DependentUpon>CaesarPswForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="HelpfulForms\HuckBrutforceTrithemius.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelpfulForms\HuckBrutforceTrithemius.Designer.cs">
+      <DependentUpon>HuckBrutforceTrithemius.cs</DependentUpon>
+    </Compile>
     <Compile Include="HelpfulForms\HuckCaesarForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="HelpfulForms\HuckCaesarForm.Designer.cs">
       <DependentUpon>HuckCaesarForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="HelpfulForms\TrithemiusPswForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelpfulForms\TrithemiusPswForm.Designer.cs">
+      <DependentUpon>TrithemiusPswForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TrithemiusCipher.cs" />
     <EmbeddedResource Include="About.resx">
       <DependentUpon>About.cs</DependentUpon>
     </EmbeddedResource>
@@ -81,8 +94,14 @@
     <EmbeddedResource Include="HelpfulForms\CaesarPswForm.resx">
       <DependentUpon>CaesarPswForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HelpfulForms\HuckBrutforceTrithemius.resx">
+      <DependentUpon>HuckBrutforceTrithemius.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HelpfulForms\HuckCaesarForm.resx">
       <DependentUpon>HuckCaesarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelpfulForms\TrithemiusPswForm.resx">
+      <DependentUpon>TrithemiusPswForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -1,4 +1,4 @@
-﻿namespace Cezar.HelpfulForms {
+﻿namespace Cipher.HelpfulForms {
 	partial class CaesarPswForm {
 		/// <summary>
 		/// Required designer variable.
@@ -76,7 +76,8 @@
 			this.Name = "CaesarPswForm";
 			this.ShowIcon = false;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "Caesar Cipher";
+			this.Text = "Caesar Password";
+			this.Load += new System.EventHandler(this.CaesarPswForm_Load);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

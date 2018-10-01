@@ -1,4 +1,4 @@
-﻿namespace Cezar.HelpfulForms {
+﻿namespace Cipher.HelpfulForms {
 	partial class HuckCaesarForm {
 		/// <summary>
 		/// Required designer variable.
