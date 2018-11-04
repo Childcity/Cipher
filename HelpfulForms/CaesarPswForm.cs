@@ -18,7 +18,7 @@ namespace Cipher.HelpfulForms {
 					return;
 				}
 				Int32.Parse(textBox3.Text);
-				if ( textBox3.Text.Length < 4 )
+				if ( textBox3.Text.Length < 10 )
 					key = textBox3.Text;
 				else
 					throw new ArgumentException();
