@@ -33,11 +33,11 @@
 			this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.textBox3.Location = new System.Drawing.Point(89, 87);
 			this.textBox3.Name = "textBox3";
-			this.textBox3.PasswordChar = '*';
 			this.textBox3.Size = new System.Drawing.Size(197, 28);
 			this.textBox3.TabIndex = 10;
 			this.textBox3.Text = "0";
 			this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.textBox3.UseSystemPasswordChar = true;
 			this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
 			// 
 			// label1

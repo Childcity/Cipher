@@ -27,6 +27,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CipherForm));
 			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
 			this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
@@ -42,8 +43,14 @@
 			this.trithemiusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.encryptToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
 			this.decryptToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-			this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.huckToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.xOREncriptionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.encryptToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+			this.decryptToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+			this.bookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.encryptToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+			this.decryptToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+			this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -53,9 +60,10 @@
 			this.textBox1.Location = new System.Drawing.Point(12, 31);
 			this.textBox1.Multiline = true;
 			this.textBox1.Name = "textBox1";
+			this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
 			this.textBox1.Size = new System.Drawing.Size(541, 267);
 			this.textBox1.TabIndex = 0;
-			this.textBox1.Text = "Simple of text to Encrypt";
+			this.textBox1.Text = resources.GetString("textBox1.Text");
 			// 
 			// saveFileDialog1
 			// 
@@ -108,7 +116,9 @@
 			// 
 			this.encryptToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.caesarToolStripMenuItem,
-            this.trithemiusToolStripMenuItem});
+            this.trithemiusToolStripMenuItem,
+            this.xOREncriptionToolStripMenuItem,
+            this.bookToolStripMenuItem});
 			this.encryptToolStripMenuItem.Name = "encryptToolStripMenuItem";
 			this.encryptToolStripMenuItem.Size = new System.Drawing.Size(64, 24);
 			this.encryptToolStripMenuItem.Text = "Cipher";
@@ -120,7 +130,7 @@
             this.decryptToolStripMenuItem,
             this.hackToolStripMenuItem});
 			this.caesarToolStripMenuItem.Name = "caesarToolStripMenuItem";
-			this.caesarToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+			this.caesarToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
 			this.caesarToolStripMenuItem.Text = "Caesar";
 			// 
 			// encryptToolStripMenuItem1
@@ -151,22 +161,75 @@
             this.decryptToolStripMenuItem1,
             this.huckToolStripMenuItem});
 			this.trithemiusToolStripMenuItem.Name = "trithemiusToolStripMenuItem";
-			this.trithemiusToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+			this.trithemiusToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
 			this.trithemiusToolStripMenuItem.Text = "Trithemius";
 			// 
 			// encryptToolStripMenuItem2
 			// 
 			this.encryptToolStripMenuItem2.Name = "encryptToolStripMenuItem2";
-			this.encryptToolStripMenuItem2.Size = new System.Drawing.Size(216, 26);
+			this.encryptToolStripMenuItem2.Size = new System.Drawing.Size(136, 26);
 			this.encryptToolStripMenuItem2.Text = "Encrypt";
 			this.encryptToolStripMenuItem2.Click += new System.EventHandler(this.encryptToolStripMenuItem2_Click);
 			// 
 			// decryptToolStripMenuItem1
 			// 
 			this.decryptToolStripMenuItem1.Name = "decryptToolStripMenuItem1";
-			this.decryptToolStripMenuItem1.Size = new System.Drawing.Size(216, 26);
+			this.decryptToolStripMenuItem1.Size = new System.Drawing.Size(136, 26);
 			this.decryptToolStripMenuItem1.Text = "Decrypt";
 			this.decryptToolStripMenuItem1.Click += new System.EventHandler(this.decryptToolStripMenuItem1_Click);
+			// 
+			// huckToolStripMenuItem
+			// 
+			this.huckToolStripMenuItem.Name = "huckToolStripMenuItem";
+			this.huckToolStripMenuItem.Size = new System.Drawing.Size(136, 26);
+			this.huckToolStripMenuItem.Text = "Huck";
+			this.huckToolStripMenuItem.Click += new System.EventHandler(this.huckToolStripMenuItem_Click);
+			// 
+			// xOREncriptionToolStripMenuItem
+			// 
+			this.xOREncriptionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.encryptToolStripMenuItem3,
+            this.decryptToolStripMenuItem2});
+			this.xOREncriptionToolStripMenuItem.Name = "xOREncriptionToolStripMenuItem";
+			this.xOREncriptionToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
+			this.xOREncriptionToolStripMenuItem.Text = "XOR";
+			// 
+			// encryptToolStripMenuItem3
+			// 
+			this.encryptToolStripMenuItem3.Name = "encryptToolStripMenuItem3";
+			this.encryptToolStripMenuItem3.Size = new System.Drawing.Size(136, 26);
+			this.encryptToolStripMenuItem3.Text = "Encrypt";
+			this.encryptToolStripMenuItem3.Click += new System.EventHandler(this.encryptToolStripMenuItem3_Click);
+			// 
+			// decryptToolStripMenuItem2
+			// 
+			this.decryptToolStripMenuItem2.Name = "decryptToolStripMenuItem2";
+			this.decryptToolStripMenuItem2.Size = new System.Drawing.Size(136, 26);
+			this.decryptToolStripMenuItem2.Text = "Decrypt";
+			this.decryptToolStripMenuItem2.Click += new System.EventHandler(this.decryptToolStripMenuItem2_Click);
+			// 
+			// bookToolStripMenuItem
+			// 
+			this.bookToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.encryptToolStripMenuItem4,
+            this.decryptToolStripMenuItem3});
+			this.bookToolStripMenuItem.Name = "bookToolStripMenuItem";
+			this.bookToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
+			this.bookToolStripMenuItem.Text = "Book";
+			// 
+			// encryptToolStripMenuItem4
+			// 
+			this.encryptToolStripMenuItem4.Name = "encryptToolStripMenuItem4";
+			this.encryptToolStripMenuItem4.Size = new System.Drawing.Size(136, 26);
+			this.encryptToolStripMenuItem4.Text = "Encrypt";
+			this.encryptToolStripMenuItem4.Click += new System.EventHandler(this.encryptToolStripMenuItem4_Click);
+			// 
+			// decryptToolStripMenuItem3
+			// 
+			this.decryptToolStripMenuItem3.Name = "decryptToolStripMenuItem3";
+			this.decryptToolStripMenuItem3.Size = new System.Drawing.Size(136, 26);
+			this.decryptToolStripMenuItem3.Text = "Decrypt";
+			this.decryptToolStripMenuItem3.Click += new System.EventHandler(this.decryptToolStripMenuItem3_Click);
 			// 
 			// aboutToolStripMenuItem
 			// 
@@ -174,13 +237,6 @@
 			this.aboutToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
 			this.aboutToolStripMenuItem.Text = "About";
 			this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
-			// 
-			// huckToolStripMenuItem
-			// 
-			this.huckToolStripMenuItem.Name = "huckToolStripMenuItem";
-			this.huckToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
-			this.huckToolStripMenuItem.Text = "Huck";
-			this.huckToolStripMenuItem.Click += new System.EventHandler(this.huckToolStripMenuItem_Click);
 			// 
 			// CipherForm
 			// 
@@ -191,6 +247,7 @@
 			this.Controls.Add(this.textBox1);
 			this.Controls.Add(this.menuStrip1);
 			this.DoubleBuffered = true;
+			this.KeyPreview = true;
 			this.MainMenuStrip = this.menuStrip1;
 			this.MaximizeBox = false;
 			this.Name = "CipherForm";
@@ -223,6 +280,12 @@
 		private System.Windows.Forms.ToolStripMenuItem encryptToolStripMenuItem2;
 		private System.Windows.Forms.ToolStripMenuItem decryptToolStripMenuItem1;
 		private System.Windows.Forms.ToolStripMenuItem huckToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem xOREncriptionToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem encryptToolStripMenuItem3;
+		private System.Windows.Forms.ToolStripMenuItem decryptToolStripMenuItem2;
+		private System.Windows.Forms.ToolStripMenuItem bookToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem encryptToolStripMenuItem4;
+		private System.Windows.Forms.ToolStripMenuItem decryptToolStripMenuItem3;
 	}
 }
 
