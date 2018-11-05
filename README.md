@@ -1,6 +1,4 @@
 # Simple cipher on C#, that provide encription and decription in defferent algorithms
-#
-#
 
 #### Currently cipher provide realization of:
   - Caesar algorithme.         
@@ -16,19 +14,19 @@
     - Encrypt: ```y  = (x+k) mod n ```
     - Decrypt: ```x  = (y+n−(k mod n)) mod n```
         , where: 
-        - ```x``` --- letter of plaintext
-        - ```y``` --- letter of ciphertext
-        - ```k``` --- key (how much symbols to shift)
-        - ```n``` --- count of all symbols in our alphabet
+        - ```x```  —  letter of plaintext
+        - ```y```  —  letter of ciphertext
+        - ```k```  —  key (how much symbols to shift)
+        - ```n```  —  count of all symbols in our alphabet
       
   - ##### Trithemius algorithme is described [here](https://en.wikipedia.org/wiki/Tabula_recta)
     - Encrypt: ```y  = (x+k) mod n```               (as in Caesar)
     - Decrypt: ```x  = (y+n−(k mod n)) mod n```     (as in Caesar)
         , where: 
-        - ```x``` --- letter of plaintext
-        - ```y``` --- letter of ciphertext
-        - ```n``` --- count of all symbols in our alphabet
-        - ```k``` --- key (how much symbols to shift) is calculated by next three way
+        - ```x```  —  letter of plaintext
+        - ```y```  —  letter of ciphertext
+        - ```n```  —  count of all symbols in our alphabet
+        - ```k```  —  key (how much symbols to shift) is calculated by next three way
             1) by linear equation:    ```k = Ap + B```
             2) by nonlinear equation: ```k = Ap^2 + Bp + C``` 
             3) by ```MOTTO```
@@ -39,11 +37,11 @@
   - ##### XOR Encription algorithme is described [here](https://en.wikipedia.org/wiki/XOR_cipher)
     - Encrypt/Decrypt: ```z = x + g (mod 2) = x XOR g```
         , where: 
-        - ```x``` --- letter of plaintext/ciphertext
-       - ```z``` --- result letter 
+        - ```x```  —  letter of plaintext/ciphertext
+       - ```z```  —  result letter 
             - (if Encription: letter of ciphertext) 
             - (if Decription: letter of plaintext)   
-       - ```g``` --- symbol of 'gamma'
+       - ```g```  —  symbol of 'gamma'
             -   Explanation:
                 1) user enter password (some 'digit') -> we create Random generator with user seed ('digit', that he/she entered);
                 2) we generate random 'gamma' which length equals to length of plaintext;
@@ -51,7 +49,7 @@
 
 
   - ##### Book cipher algorithme  is described [here](https://en.wikipedia.org/wiki/Book_cipher)
-    Explanation:
+    - Explanation:
       1) password it is some 'book' or 'poem'. (in my realization i use just TXT file, in which should be some text);
       2) to encrypt and decript input text we make table (in my realization it is 'char[,] dict;') and feel it with letters from input.
          It will be in practic something like this:
