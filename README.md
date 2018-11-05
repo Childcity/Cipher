@@ -1,8 +1,6 @@
 # Simple cipher on C#, that provide encription and decription in defferent algorithms
 #
 #
-#
-#
 
 #### Currently cipher provide realization of:
   - Caesar algorithme.         
@@ -57,7 +55,8 @@
       1) password it is some 'book' or 'poem'. (in my realization i use just TXT file, in which should be some text);
       2) to encrypt and decript input text we make table (in my realization it is 'char[,] dict;') and feel it with letters from input.
          It will be in practic something like this:
-            0|1| 2| 3| 4| 5 | 6 | 7 | 8 | 9 |..|
+         
+            0 |1| 2| 3| 4| 5 | 6 | 7 | 8 | 9 |...|
             | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- |
             1| H | y | , | M | y | n | a | m | e |
             2| i | s | B | o | b | M | o | r | l |
