@@ -14,6 +14,7 @@ namespace Cipher {
 		private TrithemiusCipher trithemiusCipher;
 		private XOREncryptionCipher xorEncryptionCipher;
 		private BookCipher bookCipher;
+		private TheKnapsackProblemCipher theKnapsackProblemCipher;
 
 		public CipherForm()
 		{
@@ -23,6 +24,7 @@ namespace Cipher {
 			trithemiusCipher = new TrithemiusCipher();
 			xorEncryptionCipher = new XOREncryptionCipher();
 			bookCipher = new BookCipher();
+			theKnapsackProblemCipher = new TheKnapsackProblemCipher();
 		}
 
 		private void tryCaesarEncryptDecrypt(Operation op) {
@@ -153,6 +155,48 @@ namespace Cipher {
 			tryBookEncryptDecrypt(Operation.Decrypt);
 		}
 
+		private void encryptToolStripMenuItem5_Click(object sender, EventArgs e) {
+			KnapsackPubKeyForm keyForm = new KnapsackPubKeyForm();
+			keyForm.Key = theKnapsackProblemCipher.PublicKey;
+			if(DialogResult.Cancel == keyForm.ShowDialog(this) || keyForm.Key == null) {
+				return;
+			}
+			theKnapsackProblemCipher.PublicKey = keyForm.Key;
+			textBox1.Text = theKnapsackProblemCipher.Knapsack(textBox1.Text, TheKnapsackProblemCipher.Operation.Encrypt);
+		}
+
+		private void decryptToolStripMenuItem4_Click(object sender, EventArgs e) {
+			KnapsackPrvKeyForm keyForm = new KnapsackPrvKeyForm();
+			keyForm.Key = theKnapsackProblemCipher.PrivateKey;
+			keyForm.M = theKnapsackProblemCipher.M;
+			keyForm.N = theKnapsackProblemCipher.N;
+			if(DialogResult.Cancel == keyForm.ShowDialog(this) 
+				|| keyForm.Key == null || keyForm.M == 0 || keyForm.N == 0) {
+				return;
+			}
+			theKnapsackProblemCipher.M = keyForm.M;
+			theKnapsackProblemCipher.N = keyForm.N;
+			theKnapsackProblemCipher.PrivateKey = keyForm.Key;
+			textBox1.Text = theKnapsackProblemCipher.Knapsack(textBox1.Text, TheKnapsackProblemCipher.Operation.Decrypt);
+		}
+
+		private void generateKeysToolStripMenuItem_Click(object sender, EventArgs e) {
+			KnapsackKeyGeneratorForm keyGenForm = new KnapsackKeyGeneratorForm();
+			keyGenForm.PrivateKey = theKnapsackProblemCipher.PrivateKey;
+			keyGenForm.PublicKey = theKnapsackProblemCipher.PublicKey;
+			keyGenForm.M = theKnapsackProblemCipher.M;
+			keyGenForm.N = theKnapsackProblemCipher.N;
+			if(DialogResult.Cancel == keyGenForm.ShowDialog(this) 
+				|| keyGenForm.PrivateKey == null || keyGenForm.PublicKey == null
+				|| keyGenForm.M == 0 || keyGenForm.N == 0) {
+				return;
+			}
+			 theKnapsackProblemCipher.PrivateKey = keyGenForm.PrivateKey;
+			 theKnapsackProblemCipher.PublicKey = keyGenForm.PublicKey;
+			 theKnapsackProblemCipher.M = keyGenForm.M;
+			 theKnapsackProblemCipher.N = keyGenForm.N;
+		}
+
 		protected override void OnKeyDown(KeyEventArgs e) { 
 			if(e.KeyData == (Keys.Control | Keys.B)) {
 				tryBookEncryptDecrypt(Operation.Encrypt);
@@ -160,7 +204,16 @@ namespace Cipher {
 			if(e.KeyData == (Keys.Control | Keys.Shift | Keys.B)) {
 				tryBookEncryptDecrypt(Operation.Decrypt);
 			}
+
+			if(e.KeyData == (Keys.Control | Keys.K)) {
+				encryptToolStripMenuItem5.PerformClick();
+			}
+			if(e.KeyData == (Keys.Control | Keys.Shift | Keys.K)) {
+				decryptToolStripMenuItem4.PerformClick();
+			}
+			if(e.KeyData == (Keys.Control | Keys.Shift | Keys.G)) {
+				generateKeysToolStripMenuItem.PerformClick();
+			}
 		}
-	
 	}
 }

@@ -60,6 +60,7 @@ namespace Cipher {
 				}
 				return res;
 			}
+
 			public string Caesar(string input, int key, Operation op) {
 				string result = string.Empty;
 

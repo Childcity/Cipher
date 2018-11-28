@@ -77,6 +77,24 @@
     <Compile Include="HelpfulForms\HuckCaesarForm.Designer.cs">
       <DependentUpon>HuckCaesarForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="HelpfulForms\KnapsackKeyGeneratorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelpfulForms\KnapsackKeyGeneratorForm.Designer.cs">
+      <DependentUpon>KnapsackKeyGeneratorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelpfulForms\KnapsackPrvKeyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelpfulForms\KnapsackPrvKeyForm.Designer.cs">
+      <DependentUpon>KnapsackPrvKeyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelpfulForms\KnapsackPubKeyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelpfulForms\KnapsackPubKeyForm.Designer.cs">
+      <DependentUpon>KnapsackPubKeyForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="HelpfulForms\TrithemiusPswForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +103,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TheKnapsackProblemCipher.cs" />
     <Compile Include="TrithemiusCipher.cs" />
     <Compile Include="XOREncryption.cs" />
     <EmbeddedResource Include="About.resx">
@@ -101,6 +120,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HelpfulForms\HuckCaesarForm.resx">
       <DependentUpon>HuckCaesarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelpfulForms\KnapsackKeyGeneratorForm.resx">
+      <DependentUpon>KnapsackKeyGeneratorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelpfulForms\KnapsackPrvKeyForm.resx">
+      <DependentUpon>KnapsackPrvKeyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelpfulForms\KnapsackPubKeyForm.resx">
+      <DependentUpon>KnapsackPubKeyForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HelpfulForms\TrithemiusPswForm.resx">
       <DependentUpon>TrithemiusPswForm.cs</DependentUpon>

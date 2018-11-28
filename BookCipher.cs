@@ -7,6 +7,11 @@ namespace Cipher {
 
 	class BookCipher {
 		private char[,] dict = null;
+		private Random rnd = null;
+
+		public BookCipher() {
+			rnd = new Random(new DateTime().Millisecond);
+		}
 
 		public string Book(string input, string book, Operation op) {
 			string result = string.Empty;
@@ -30,7 +35,8 @@ namespace Cipher {
 		}
 
 		private (int x, int y) findRandomLetter(char letter) {
-			int rundomDigit = (new Random(new DateTime().Millisecond)).Next(1,30);
+			int rundomDigit = rnd.Next(1,300);
+			//MessageBox.Show(""+rundomDigit);
 			var firstPositionOfLetter  = findLetter((0, 0), letter);
 			if(firstPositionOfLetter.x == -1)
 				return (-1, -1);
