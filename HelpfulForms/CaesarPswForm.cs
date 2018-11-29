@@ -28,10 +28,6 @@ namespace Cipher.HelpfulForms {
 			}
 		}
 
-		private void button1_Click(object sender, EventArgs e) {
-
-		}
-
 		private void CaesarPswForm_Load(object sender, EventArgs e) {
 
 		}

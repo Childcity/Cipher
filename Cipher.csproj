@@ -59,6 +59,7 @@
     <Compile Include="CipherForm.Designer.cs">
       <DependentUpon>CipherForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="NativeCipherImplemantation.cs" />
     <Compile Include="HelpfulForms\CaesarPswForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +96,12 @@
     <Compile Include="HelpfulForms\KnapsackPubKeyForm.Designer.cs">
       <DependentUpon>KnapsackPubKeyForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="HelpfulForms\StandartPswForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelpfulForms\StandartPswForm.Designer.cs">
+      <DependentUpon>StandartPswForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="HelpfulForms\TrithemiusPswForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HelpfulForms\KnapsackPubKeyForm.resx">
       <DependentUpon>KnapsackPubKeyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelpfulForms\StandartPswForm.resx">
+      <DependentUpon>StandartPswForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HelpfulForms\TrithemiusPswForm.resx">
       <DependentUpon>TrithemiusPswForm.cs</DependentUpon>

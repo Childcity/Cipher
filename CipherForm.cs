@@ -89,6 +89,13 @@ namespace Cipher {
 			}
 		}
 
+		private void tryNativeAlgorithmEncryptDecrypt(NativeCipherImplemantation.Algorithm alg , NativeCipherImplemantation.Operation op) {
+			StandartPswForm psw = new StandartPswForm();
+			if(DialogResult.Cancel == psw.ShowDialog(this))
+				return;
+			textBox1.Text = NativeCipherImplemantation.NativeCipher(textBox1.Text, psw.Password, alg, op);
+		}
+
 		private void encryptToolStripMenuItem1_Click(object sender, EventArgs e) {
 			tryCaesarEncryptDecrypt(Operation.Encrypt);
 		}
@@ -198,13 +205,6 @@ namespace Cipher {
 		}
 
 		protected override void OnKeyDown(KeyEventArgs e) { 
-			if(e.KeyData == (Keys.Control | Keys.B)) {
-				tryBookEncryptDecrypt(Operation.Encrypt);
-			}
-			if(e.KeyData == (Keys.Control | Keys.Shift | Keys.B)) {
-				tryBookEncryptDecrypt(Operation.Decrypt);
-			}
-
 			if(e.KeyData == (Keys.Control | Keys.K)) {
 				encryptToolStripMenuItem5.PerformClick();
 			}
@@ -214,6 +214,36 @@ namespace Cipher {
 			if(e.KeyData == (Keys.Control | Keys.Shift | Keys.G)) {
 				generateKeysToolStripMenuItem.PerformClick();
 			}
+		}
+
+		private void encryptToolStripMenuItem7_Click(object sender, EventArgs e) {
+			tryNativeAlgorithmEncryptDecrypt(NativeCipherImplemantation.Algorithm.DES
+				, NativeCipherImplemantation.Operation.Encrypt);
+		}
+
+		private void decrypttToolStripMenuItem_Click(object sender, EventArgs e) {
+			tryNativeAlgorithmEncryptDecrypt(NativeCipherImplemantation.Algorithm.DES
+				, NativeCipherImplemantation.Operation.Decrypt);
+		}
+
+		private void encryptToolStripMenuItem8_Click(object sender, EventArgs e) {
+			tryNativeAlgorithmEncryptDecrypt(NativeCipherImplemantation.Algorithm.TripleDES
+				, NativeCipherImplemantation.Operation.Encrypt);
+		}
+
+		private void decryptToolStripMenuItem6_Click(object sender, EventArgs e) {
+			tryNativeAlgorithmEncryptDecrypt(NativeCipherImplemantation.Algorithm.TripleDES
+				, NativeCipherImplemantation.Operation.Decrypt);
+		}
+
+		private void encryptToolStripMenuItem9_Click(object sender, EventArgs e) {
+			tryNativeAlgorithmEncryptDecrypt(NativeCipherImplemantation.Algorithm.AES
+				, NativeCipherImplemantation.Operation.Encrypt);
+		}
+
+		private void decryptToolStripMenuItem7_Click(object sender, EventArgs e) {
+			tryNativeAlgorithmEncryptDecrypt(NativeCipherImplemantation.Algorithm.AES
+				, NativeCipherImplemantation.Operation.Decrypt);
 		}
 	}
 }
