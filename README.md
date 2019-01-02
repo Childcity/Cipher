@@ -1,10 +1,18 @@
-# Simple cipher on C#, that provide encription and decription in defferent algorithms
+
+
+# Simple of cipher on C#, that provide encription and decription in defferent algorithms
 
 #### Currently cipher provide realization of:
-  - Caesar algorithme.         
-  - Trithemius algorithme.
-  - XOR Encription algorithme
-  - Book cipher algorithme
+  - Caesar algorithme;         
+  - Trithemius algorithme;
+  - XOR Encription algorithme;
+  - Book cipher algorithme;
+  - The Knapsack cipher algorithme (based on The Knapsack Problem);
+  - .NET native algorithm implementation
+	  - DES;
+	  - TripleDES;
+	  - AES;
+	  - RSA.
 
 #### Next future: 
   - Today - nothing
@@ -67,5 +75,30 @@
       4) to decrypt, jut find position of each letter (that will be in ciphertext) in our table
 
 
+  - ##### The Knapsack cipher algorithme (based on The Knapsack Problem) [here](https://en.wikipedia.org/wiki/Merkle%E2%80%93Hellman_knapsack_cryptosystem) and [here](https://nrich.maths.org/2199) (more understandable to me)
+    - Explanation:
+	    1) Private key is superincreasing sequence. For example, the set {1, 2, 4, 10, 20, 40}
+	    2) - Public key:
+	    One algorithm that uses a superincreasing knapsack for the private (easy) key and a non-superincreasing knapsack for the public key was created by Merkle and Hellman They did this by taking a superincreasing knapsack problem and converting it into a non-superincreasing one that could be made public, using modulus arithmetic.
+			-    **Making the Public Key**
+			To produce a normal knapsack sequence, take a superincreasing sequence; e.g. {1, 2, 4, 10, 20, 40}. Multiply all the values by a number ```n MODulo m```. The modulus should be a number greater than the sum of all the numbers in the sequence, for example, 110. The multiplier should have no factors in common with the modulus. So let's choose 31. The normal knapsack sequence would be: 
+					```
+					1×31 mod(110) = 31  
+					2×31 mod(110) = 62  
+					4×31 mod(110) = 14  
+					10×31 mod(110) = 90  
+					20×31 mod(110) = 70  
+					40×31 mod(110) = 30
+					```
+
+		3) So the public key is: {31, 62, 14, 90, 70, 30} and  
+		the private key is **{1, 2, 4, 10, 20.40}, n = 31, m = 110**.
+
+
+  - ##### .NET native algorithm implementation [here](https://en.wikipedia.org/wiki/Book_cipher)
+    - Explanation:
+    This project contains examples of implementation of standard encryption algorithms such as DES, TripleDES, AES, RSA with GUI Interface.
+
+
 ##### Nikolay gorodetskiy,
-###### November 18, 2018 - Kyiv, Ukraine   
+###### January 2, 2018 - Kyiv, Ukraine   
