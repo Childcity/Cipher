@@ -51,10 +51,10 @@ namespace Cipher {
 				List<bool> bitsList = new List<bool>();
 				foreach(string cipherNumStr in input.Trim().Split(' ')) {
 					int cipherNum = int.Parse(cipherNumStr);
-					// Decription
+					// Find link to decription in README. In general, next line decrypt encrypted number (cipherNum)
 					int plainNum = (cipherNum * multInverseOfMN) % M;
 
-					// Building a chunk of bits from plainNum
+					// Building a chunk of bits from plainNum (represent number as list of bits)
 					List<bool> chunk = new List<bool>();
 					for(int i = PrivateKey.Length - 1; i >= 0; i--) {
 						if(PrivateKey[i] <= plainNum) {
@@ -68,6 +68,7 @@ namespace Cipher {
 					bitsList.AddRange(chunk);
 				}
 				
+				// Converting bits to Text (UTF8)
 				result = BitsListToText(bitsList);
 			}
 
@@ -129,7 +130,7 @@ namespace Cipher {
 
 		// Euclidean algorithm
 		static public int GCD(int a, int b) {
-			return b != 0 ? GCD(b, a % b) : a;
+			return (b != 0) ? GCD(b, a % b) : a;
 		}
 
 		static public int CountSumOfPrev(int[] arr) {
