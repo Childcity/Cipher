@@ -1,27 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
-using System.Windows.Forms;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Cipher {
 	class NativeCipherImplemantation {
 		public enum Operation { Encrypt, Decrypt }
 		public enum Algorithm { DES, TripleDES, AES}
 
-		public static string NativeCipher(string input, string key, Algorithm alg, Operation op) {
+		public static string SymmetricCipher(string input, string key, Algorithm alg, Operation op) {
 			MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
 			SymmetricAlgorithm cryptoProvider = null;
 			CryptoStream cryptoStream;
 			string result = string.Empty;
-
-			if(String.IsNullOrEmpty(input)) {
-				throw new ArgumentNullException
-					   ("The string which needs to be encrypted can not be null.");
-			}
 			
 			byte[] keyHash = md5.ComputeHash(Encoding.UTF8.GetBytes(key));
 
@@ -40,7 +32,7 @@ namespace Cipher {
 					cryptoProvider.Key = cryptoProvider.IV = keyHash;
 					break;
 				default:
-					throw new ArgumentException("Algorithm is not implemented!");
+					throw new ArgumentException("Symmetric algorithm is not implemented!");
 			}
 
 			cryptoProvider.Mode = CipherMode.CBC;
@@ -61,6 +53,39 @@ namespace Cipher {
 			}
 
 			return result;
+		}
+
+		public static string RSACipher(string input, string keyXML, Operation op) {
+			string result = string.Empty;
+
+			RSACryptoServiceProvider cryptoProvider = new RSACryptoServiceProvider();
+
+			//set params (public or private key, converted from xml)
+			cryptoProvider.FromXmlString(keyXML);
+
+			if(op == Operation.Encrypt) {
+				// apply pkcs#1.5 padding and encrypt our data 
+				byte[] bytesCypherText = cryptoProvider.Encrypt(Encoding.UTF8.GetBytes(input), false);
+				//a string representation of our cypher text
+				result = Convert.ToBase64String(bytesCypherText);
+			} else {
+				//decrypt and strip pkcs#1.5 padding
+				byte[] bytesPlainTextData = cryptoProvider.Decrypt(Convert.FromBase64String(input), false);
+				//get our original plainText back
+				result = Encoding.UTF8.GetString(bytesPlainTextData);
+			}
+
+			return result;
+		}
+
+		public static void GenerateAsymmetricKeys(int bitsNum, out string prvKeyXML, out string pubKeyXML) {
+			//new CSP with a new bitsNum bit rsa key pair
+			using(var csp = new RSACryptoServiceProvider(bitsNum)) { 
+				//get the private key
+				prvKeyXML = csp.ToXmlString(true);
+				//get the public key
+				pubKeyXML = csp.ToXmlString(true);
+			}
 		}
 
 	}

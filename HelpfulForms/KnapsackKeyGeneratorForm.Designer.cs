@@ -33,13 +33,13 @@
 			this.label3 = new System.Windows.Forms.Label();
 			this.button2 = new System.Windows.Forms.Button();
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.panel2 = new System.Windows.Forms.Panel();
+			this.label7 = new System.Windows.Forms.Label();
+			this.label8 = new System.Windows.Forms.Label();
 			this.textBox4 = new System.Windows.Forms.TextBox();
 			this.label6 = new System.Windows.Forms.Label();
 			this.textBox2 = new System.Windows.Forms.TextBox();
-			this.label7 = new System.Windows.Forms.Label();
-			this.label8 = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
-			this.panel2 = new System.Windows.Forms.Panel();
 			this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
 			this.panel1.SuspendLayout();
 			this.panel2.SuspendLayout();
@@ -157,6 +157,38 @@
 			this.panel1.Size = new System.Drawing.Size(489, 329);
 			this.panel1.TabIndex = 17;
 			// 
+			// panel2
+			// 
+			this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.panel2.Controls.Add(this.label7);
+			this.panel2.Controls.Add(this.label8);
+			this.panel2.Location = new System.Drawing.Point(242, 181);
+			this.panel2.Name = "panel2";
+			this.panel2.Size = new System.Drawing.Size(196, 94);
+			this.panel2.TabIndex = 23;
+			// 
+			// label7
+			// 
+			this.label7.AutoSize = true;
+			this.label7.BackColor = System.Drawing.Color.LawnGreen;
+			this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.label7.Location = new System.Drawing.Point(15, 17);
+			this.label7.Name = "label7";
+			this.label7.Size = new System.Drawing.Size(38, 25);
+			this.label7.TabIndex = 19;
+			this.label7.Text = "(>)";
+			// 
+			// label8
+			// 
+			this.label8.AutoSize = true;
+			this.label8.BackColor = System.Drawing.Color.LawnGreen;
+			this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.label8.Location = new System.Drawing.Point(15, 59);
+			this.label8.Name = "label8";
+			this.label8.Size = new System.Drawing.Size(156, 25);
+			this.label8.TabIndex = 19;
+			this.label8.Text = "GCN(M, N) == 1";
+			// 
 			// textBox4
 			// 
 			this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -191,28 +223,6 @@
 			this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
 			// 
-			// label7
-			// 
-			this.label7.AutoSize = true;
-			this.label7.BackColor = System.Drawing.Color.LawnGreen;
-			this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.label7.Location = new System.Drawing.Point(15, 17);
-			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(38, 25);
-			this.label7.TabIndex = 19;
-			this.label7.Text = "(>)";
-			// 
-			// label8
-			// 
-			this.label8.AutoSize = true;
-			this.label8.BackColor = System.Drawing.Color.LawnGreen;
-			this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.label8.Location = new System.Drawing.Point(15, 59);
-			this.label8.Name = "label8";
-			this.label8.Size = new System.Drawing.Size(156, 25);
-			this.label8.TabIndex = 19;
-			this.label8.Text = "GCN(M, N) == 1";
-			// 
 			// label5
 			// 
 			this.label5.AutoSize = true;
@@ -222,16 +232,6 @@
 			this.label5.Size = new System.Drawing.Size(35, 25);
 			this.label5.TabIndex = 19;
 			this.label5.Text = "M:";
-			// 
-			// panel2
-			// 
-			this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.panel2.Controls.Add(this.label7);
-			this.panel2.Controls.Add(this.label8);
-			this.panel2.Location = new System.Drawing.Point(242, 181);
-			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(196, 94);
-			this.panel2.TabIndex = 23;
 			// 
 			// KnapsackKeyGeneratorForm
 			// 

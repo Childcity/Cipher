@@ -89,11 +89,20 @@ namespace Cipher {
 			}
 		}
 
-		private void tryNativeAlgorithmEncryptDecrypt(NativeCipherImplemantation.Algorithm alg , NativeCipherImplemantation.Operation op) {
+		private void trySymmetricEncryptDecrypt(NativeCipherImplemantation.Algorithm alg , NativeCipherImplemantation.Operation op) {
 			StandartPswForm psw = new StandartPswForm();
 			if(DialogResult.Cancel == psw.ShowDialog(this))
 				return;
-			textBox1.Text = NativeCipherImplemantation.NativeCipher(textBox1.Text, psw.Password, alg, op);
+			textBox1.Text = NativeCipherImplemantation.SymmetricCipher(textBox1.Text, psw.Password, alg, op);
+		}
+
+		private void tryRSAEncryptDecrypt(NativeCipherImplemantation.Operation op) {
+			StandartPswForm psw = new StandartPswForm();
+			if(DialogResult.Cancel == psw.ShowDialog(this))
+				return;
+			try{
+				textBox1.Text = NativeCipherImplemantation.RSACipher(textBox1.Text, psw.Password, op);
+			} catch(Exception e) { MessageBox.Show(e.Message); }
 		}
 
 		private void encryptToolStripMenuItem1_Click(object sender, EventArgs e) {
@@ -206,44 +215,57 @@ namespace Cipher {
 
 		protected override void OnKeyDown(KeyEventArgs e) { 
 			if(e.KeyData == (Keys.Control | Keys.K)) {
-				encryptToolStripMenuItem5.PerformClick();
+				encryptToolStripMenuItem10.PerformClick();
 			}
 			if(e.KeyData == (Keys.Control | Keys.Shift | Keys.K)) {
-				decryptToolStripMenuItem4.PerformClick();
+				decryptToolStripMenuItem8.PerformClick();
 			}
 			if(e.KeyData == (Keys.Control | Keys.Shift | Keys.G)) {
-				generateKeysToolStripMenuItem.PerformClick();
+				generateKeysToolStripMenuItem1.PerformClick();
 			}
 		}
 
 		private void encryptToolStripMenuItem7_Click(object sender, EventArgs e) {
-			tryNativeAlgorithmEncryptDecrypt(NativeCipherImplemantation.Algorithm.DES
+			trySymmetricEncryptDecrypt(NativeCipherImplemantation.Algorithm.DES
 				, NativeCipherImplemantation.Operation.Encrypt);
 		}
 
 		private void decrypttToolStripMenuItem_Click(object sender, EventArgs e) {
-			tryNativeAlgorithmEncryptDecrypt(NativeCipherImplemantation.Algorithm.DES
+			trySymmetricEncryptDecrypt(NativeCipherImplemantation.Algorithm.DES
 				, NativeCipherImplemantation.Operation.Decrypt);
 		}
 
 		private void encryptToolStripMenuItem8_Click(object sender, EventArgs e) {
-			tryNativeAlgorithmEncryptDecrypt(NativeCipherImplemantation.Algorithm.TripleDES
+			trySymmetricEncryptDecrypt(NativeCipherImplemantation.Algorithm.TripleDES
 				, NativeCipherImplemantation.Operation.Encrypt);
 		}
 
 		private void decryptToolStripMenuItem6_Click(object sender, EventArgs e) {
-			tryNativeAlgorithmEncryptDecrypt(NativeCipherImplemantation.Algorithm.TripleDES
+			trySymmetricEncryptDecrypt(NativeCipherImplemantation.Algorithm.TripleDES
 				, NativeCipherImplemantation.Operation.Decrypt);
 		}
 
 		private void encryptToolStripMenuItem9_Click(object sender, EventArgs e) {
-			tryNativeAlgorithmEncryptDecrypt(NativeCipherImplemantation.Algorithm.AES
+			trySymmetricEncryptDecrypt(NativeCipherImplemantation.Algorithm.AES
 				, NativeCipherImplemantation.Operation.Encrypt);
 		}
 
 		private void decryptToolStripMenuItem7_Click(object sender, EventArgs e) {
-			tryNativeAlgorithmEncryptDecrypt(NativeCipherImplemantation.Algorithm.AES
+			trySymmetricEncryptDecrypt(NativeCipherImplemantation.Algorithm.AES
 				, NativeCipherImplemantation.Operation.Decrypt);
+		}
+
+		private void encryptToolStripMenuItem10_Click(object sender, EventArgs e) {
+			tryRSAEncryptDecrypt(NativeCipherImplemantation.Operation.Encrypt);
+		}
+
+		private void decryptToolStripMenuItem8_Click(object sender, EventArgs e) {
+			tryRSAEncryptDecrypt(NativeCipherImplemantation.Operation.Decrypt);
+		}
+
+		private void generateKeysToolStripMenuItem1_Click(object sender, EventArgs e) {
+			RSAKeyGeneratorForm keyGeneratorForm = new RSAKeyGeneratorForm();
+			keyGeneratorForm.ShowDialog(this);
 		}
 	}
 }

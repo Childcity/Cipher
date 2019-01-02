@@ -34,9 +34,9 @@
 			this.label1.AutoSize = true;
 			this.label1.Location = new System.Drawing.Point(12, 64);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(189, 34);
+			this.label1.Size = new System.Drawing.Size(189, 51);
 			this.label1.TabIndex = 0;
-			this.label1.Text = "Groupe - TP62\r\nAuthor - Nikolay Gorodetskiy";
+			this.label1.Text = "NTUU KPI\r\nGroup - TP62\r\nAuthor - Nikolay Gorodetskiy";
 			// 
 			// label2
 			// 
@@ -51,7 +51,7 @@
 			// label3
 			// 
 			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(103, 111);
+			this.label3.Location = new System.Drawing.Point(108, 131);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(84, 17);
 			this.label3.TabIndex = 2;
@@ -60,7 +60,7 @@
 			// button1
 			// 
 			this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
-			this.button1.Location = new System.Drawing.Point(96, 142);
+			this.button1.Location = new System.Drawing.Point(100, 151);
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(101, 34);
 			this.button1.TabIndex = 3;
@@ -73,7 +73,7 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-			this.ClientSize = new System.Drawing.Size(297, 186);
+			this.ClientSize = new System.Drawing.Size(297, 195);
 			this.Controls.Add(this.button1);
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this.label2);

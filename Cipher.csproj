@@ -59,6 +59,12 @@
     <Compile Include="CipherForm.Designer.cs">
       <DependentUpon>CipherForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="HelpfulForms\RSAKeyGeneratorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelpfulForms\RSAKeyGeneratorForm.Designer.cs">
+      <DependentUpon>RSAKeyGeneratorForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="NativeCipherImplemantation.cs" />
     <Compile Include="HelpfulForms\CaesarPswForm.cs">
       <SubType>Form</SubType>
@@ -136,6 +142,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HelpfulForms\KnapsackPubKeyForm.resx">
       <DependentUpon>KnapsackPubKeyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelpfulForms\RSAKeyGeneratorForm.resx">
+      <DependentUpon>RSAKeyGeneratorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HelpfulForms\StandartPswForm.resx">
       <DependentUpon>StandartPswForm.cs</DependentUpon>
